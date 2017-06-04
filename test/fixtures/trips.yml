@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  locations: 
+  user: one
 
 two:
   name: MyString
-  locations: 
+  user: two

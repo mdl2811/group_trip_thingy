@@ -4,10 +4,10 @@ one:
   country: MyString
   city: MyString
   attraction: MyString
-  address: 
+  trip: one
 
 two:
   country: MyString
   city: MyString
   attraction: MyString
-  address: 
+  trip: two

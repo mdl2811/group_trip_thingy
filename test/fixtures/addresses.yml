@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  phone_number: 1
+  phone_number: MyString
   latitude: MyString
   longitude: MyString
-  location: 
+  location: one
 
 two:
-  phone_number: 1
+  phone_number: MyString
   latitude: MyString
   longitude: MyString
-  location: 
+  location: two

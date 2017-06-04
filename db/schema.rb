@@ -10,31 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170602224847) do
+ActiveRecord::Schema.define(version: 20170604001618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.integer "phone_number", null: false
+    t.string "phone_number"
     t.string "latitude", null: false
     t.string "longitude", null: false
+    t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_addresses_on_location_id"
   end
 
   create_table "locations", force: :cascade do |t|
     t.string "country", null: false
     t.string "city", null: false
     t.string "attraction", null: false
+    t.bigint "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["trip_id"], name: "index_locations_on_trip_id"
   end
 
   create_table "trips", force: :cascade do |t|
     t.string "name", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,4 +60,7 @@ ActiveRecord::Schema.define(version: 20170602224847) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "locations"
+  add_foreign_key "locations", "trips"
+  add_foreign_key "trips", "users"
 end
