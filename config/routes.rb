@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'addresses/index'
+
+  get 'addresses/show'
+
 	root 'trips#index'
 	
   devise_for :users
