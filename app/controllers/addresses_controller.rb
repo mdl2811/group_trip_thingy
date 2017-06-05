@@ -1,51 +1,54 @@
 class AddressesController < ApplicationController
-  def index
-  @addresses = Location.all
-end
+	before_action :set_location
+	before_action :set_address, only: [:show, :edit, :update, :destroy]
 
-def show
-end
+	def index
+  @addresses = @location.addresses.all
+	end
 
-def new
-  @address = @location.new
-end
+	def show
+	end
 
-def edit
-end
+	def new
+	  @address = @location.addresses.new
+	end
 
-def create
-  @address = @location.new(address_params)
+	def edit
+	end
 
-  if @address.save
-    redirect_to @location
-  else
-    render :new
-  end
-end
+	def create
+	  @address = @location.addresses.new(address_params)
 
-def update
-  if @address.update(address_params)
-    redirect_to @location
-  else
-    render :edit
-  end
-end
+	  if @address.save
+	    redirect_to @location
+	  else
+	    render :new
+	  end
+	end
 
-def destroy
-  @address.destroy
-  redirect_to trips_path
-end
+	def update
+	  if @address.update(address_params)
+	    redirect_to @location
+	  else
+	    render :edit
+	  end
+	end
 
-private
-  def set_address
-    @address = @location.find(params[:id])
-  end
+	def destroy
+	  @address.destroy
+	  redirect_to trips_path
+	end
 
-  def set_location
-    @location = Location.find(params[:location_id])
-  end
+	private
+	  def set_address
+	    @address = @location.find(params[:id])
+	  end
 
-  def address_params
-    params.require(:address).permit(:phone_number, :latitude, :longitude)
-  end
+	  def set_location
+	    @location = Location.find(params[:location_id])
+	  end
+
+	  def address_params
+	    params.require(:address).permit(:phone_number, :latitude, :longitude, :belong_to)
+	  end
 end
