@@ -3,18 +3,18 @@ class LocationsController < ApplicationController
 
 
   def index
-  	@locations = current_user.locations
+  	@locations = Location.all
   end
 
   def show
   end
 
   def new
-  	@location = current_user.locations.new
+  	@location = Location.new
   end
 
   def create
-  	@location = current_user.locations.new(location_params)
+  	@location = Location.new(location_params)
   	if @location.save
   		redirect_to @location
   	else
@@ -38,15 +38,10 @@ class LocationsController < ApplicationController
 	redirect_to index
   end
 
-	def google_map(center)
-  	"https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=300x300&zoom=17"
-	end
-
-
   private
 
   def set_location
-		@location = current_user.locations.find(params[:id])
+		@location = Location.find(params[:id])
   end
 
   def location_params
