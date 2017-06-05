@@ -1,7 +1,5 @@
 <h1>Where are you going?!?</h1>
 
-<%= title %>
-
 <%= form_for @location, html: {class: 'form_horizontal'} do |f| %>
   <div class="form-group">
 		<%= f.label :city, class: 'col-sm-2 control-label' %>
@@ -23,6 +21,8 @@
 		<%= f.text_field :attraction, class: 'form-control' %>
     </div>
   </div>
+
+  <%= f.submit nil, class: 'btn btn-primary' %>
   
 </form>
 <% end %>
