@@ -27,11 +27,17 @@ class LocationsController < ApplicationController
 
   def update
   	if @location.update(location_params)
-			redirect_to @location
-		else
-			render :edit
-		end
+		redirect_to @location
+	else
+		render :edit
+	end
   end
+
+  def destroy
+  	@trip.destroy
+	redirect_to index
+  end
+
 
   private 
 
