@@ -38,6 +38,10 @@ class TripsController < ApplicationController
 		redirect_to index
 	end
 
+	def add_location
+
+	end
+
 	private
 		def trip_params
 			params.require(:trip).permit(:name)
