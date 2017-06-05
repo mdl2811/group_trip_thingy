@@ -10,7 +10,7 @@ class AddressesController < ApplicationController
 	end
 
 	def new
-	  @address = @location.address.new
+	  @address = @location.addressess.new
 	end
 
 	def edit
