@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
   def create
   	@location = Location.new(location_params)
   	if @location.save
-  		redirect_to @location
+  		redirect_to @location, notice: 'Location created'
   	else
   		render :new
   	end
@@ -35,16 +35,16 @@ class LocationsController < ApplicationController
 
   def destroy
   	@trip.destroy
-	redirect_to index
+		redirect_to index, notice: 'Location Deleted'
   end
 
   private
 
-  def set_location
-		@location = Location.find(params[:id])
-  end
+	  def set_location
+			@location = Location.find(params[:id])
+	  end
 
-  def location_params
-  	params.require(:location).permit(:country, :city, :attraction)
-  end
+	  def location_params
+	  	params.require(:location).permit(:country, :city, :attraction)
+	  end
 end

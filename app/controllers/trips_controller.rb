@@ -36,7 +36,7 @@ class TripsController < ApplicationController
 
 	def destroy
 		@trip.destroy
-		redirect_to trips_path
+		redirect_to trips_path, notice: 'Deleted Trip'
 	end
 
 	def add_destination

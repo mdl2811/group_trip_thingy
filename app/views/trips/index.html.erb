@@ -2,24 +2,29 @@
 <h1>Roads? Where we're going we don't need roads.</h1>
 <br />
 
-<h3><%= current_user.email %> Your password is: <%= current_user.encrypted_password %></h3>
+<h3><%= current_user.email %></h3>
+<br />
+<h3>Your password is: <%= current_user.encrypted_password %></h3>
+<br />
 <h3>Your Trips:</h3>
 
+<div class='container'>
 <% if @trips.any? %>
 	<ul>
 		<% @trips.each do |trip| %>
 		<li>
-			<h4><%= trip.info %></h4>
-			<%= link_to 'Details of Trip', trip_path(trip) %>
-			<span>|</span>
-			<%= link_to 'Edit', edit_trip_path(trip) %>
-			<span>|</span>
-			<%= link_to 'Delete', trip_path(trip), data: {confirm: 'Do you really want to delete?'}, method: :delete %>
+			<%= trip.info %>
+			<%= link_to 'Details', trip_path(trip), class: 'btn btn-primary'%>
+			<%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-warning' %>
+			<%= link_to 'Delete', trip_path(trip),
+									 class: 'btn btn-danger',
+									 data: {confirm: 'Do you really want to delete?'},
+									 method: :delete %>
 		</li>
 		<% end %>
 	</ul>
 <% end %>
-
+</div>
 <br />
 <br />
 
