@@ -12,7 +12,7 @@
 <% if @trips.any? %>
 	<ul>
 		<% @trips.each do |trip| %>
-		<li>
+		<li class='list-styles'>
 			<%= trip.info %>
 			<%= link_to 'Details', location_path(trip), class: 'btn btn-primary'%>
 			<%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-warning' %>
