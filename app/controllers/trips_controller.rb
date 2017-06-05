@@ -1,12 +1,12 @@
 class TripsController < ApplicationController
 	before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
-  def index
+	def index
 		@trips = current_user.trips
-  end
+	end
 
-  def show
-  end
+	def show
+	end
 
 	def new
 		@trip = current_user.trips.new
@@ -30,7 +30,7 @@ class TripsController < ApplicationController
 		if @trip.update(trip_params)
 			redirect_to @trip
 		else
-			render edit
+			render :edit
 		end
 	end
 
