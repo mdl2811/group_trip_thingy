@@ -2,7 +2,8 @@
 <h1>Roads? Where we're going we don't need roads.</h1>
 <br />
 
-<h3><%= current_user.email %>, here's your trips</h3>
+<h3><%= current_user.email %> Your password is: <%= current_user.encrypted_password %></h3>
+<h3> Oops, View your trips:</h3>
 
 <% if @trips.any? %>
 	<ul>
@@ -10,9 +11,11 @@
 		<li>
 			<%= trip.info %>
 			<br />
-			<%= link_to 'Show Details of Trip', trip_path(trip) %>
-			<%= link_to 'Edit this Trip', edit_trip_path(trip) %>
-			<%= link_to 'Delete this Trip', trip_path(trip), data: {confirm: 'Do you really want to delete?'}, method: :delete %>
+			<%= link_to 'Details of Trip', trip_path(trip) %>
+			<span>|</span>
+			<%= link_to 'Edit', edit_trip_path(trip) %>
+			<span>|</span>
+			<%= link_to 'Delete', trip_path(trip), data: {confirm: 'Do you really want to delete?'}, method: :delete %>
 		</li>
 		<% end %>
 	</ul>
