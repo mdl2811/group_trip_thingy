@@ -36,7 +36,7 @@ class TripsController < ApplicationController
 
 	def destroy
 		@trip.destroy
-		redirect_to index
+		redirect_to trips_path
 	end
 
 	def add_destination
