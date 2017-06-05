@@ -18,7 +18,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'devise'
 
-gem 'google_maps_geocoder'
+gem 'geocoder'
 
 
 group :development, :test do

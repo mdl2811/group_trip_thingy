@@ -3,14 +3,13 @@
 <br />
 
 <h3><%= current_user.email %> Your password is: <%= current_user.encrypted_password %></h3>
-<h3> Oops, View your trips:</h3>
+<h3>Your Trips:</h3>
 
 <% if @trips.any? %>
 	<ul>
 		<% @trips.each do |trip| %>
 		<li>
-			<%= trip.info %>
-			<br />
+			<h4><%= trip.info %></h4>
 			<%= link_to 'Details of Trip', trip_path(trip) %>
 			<span>|</span>
 			<%= link_to 'Edit', edit_trip_path(trip) %>
@@ -19,7 +18,16 @@
 		</li>
 		<% end %>
 	</ul>
-<% else %>
-	<h3>Bummer dude, your itinerary is vacant. Plan an adventure!</h3>
-	<%= link_to 'Plan an Adventure!', new_trip_path, class: 'btn btn-primary' %>
 <% end %>
+
+<br />
+<br />
+
+<%= link_to 'Plan an Adventure!', new_trip_path, class: 'btn btn-primary' %>
+<br />
+<br />
+
+<div class="container center">
+	<h1>Search around the map for where you'd like to go..</h1>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12580.959918787094!2d23.7267166!3d37.9715285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1b3fa079b878a218!2sParthenon!5e0!3m2!1sen!2sus!4v1496687397096" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
