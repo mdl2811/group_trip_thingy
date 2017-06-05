@@ -38,8 +38,12 @@ class LocationsController < ApplicationController
 	redirect_to index
   end
 
+	def google_map(center)
+  	"https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=300x300&zoom=17"
+	end
 
-  private 
+
+  private
 
   def set_location
 		@location = current_user.locations.find(params[:id])
