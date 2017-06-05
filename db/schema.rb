@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170605163936) do
 
   create_table "locations", force: :cascade do |t|
     t.string "country", null: false
+    t.string "state", null: false
     t.string "city", null: false
     t.string "attraction", null: false
     t.bigint "trip_id"
