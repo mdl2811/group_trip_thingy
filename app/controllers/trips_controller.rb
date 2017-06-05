@@ -23,7 +23,7 @@ class TripsController < ApplicationController
 	end
 
 	def edit
-		render(partial: 'form', locals: {title: 'Create a new trip!'})
+		render(partial: 'form', locals: {title: 'Edit trip!'})
 	end
 
 	def update
