@@ -1,2 +1,11 @@
-<h1>Addresses#show</h1>
-<p>Find me in app/views/addresses/show.html.erb</p>
+<h1>Address for <%= current_user.email %> </h1>
+<br />
+
+<p>
+  <strong>Address:</strong>
+  <%= @address.title %>
+</p>
+
+<%= link_to 'Edit', edit_address_path(@location, @address) %> |
+<%= link_to 'Back', location_path(@location) %>
+<%= link_to 'Delete', redirect_to trips_path
