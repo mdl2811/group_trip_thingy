@@ -1,2 +1,23 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+
+<h1>Welcome to Tripy Trips, Broooo</h1>
+<br />
+
+<h3><%= current_user.email %>, here's your trips</h3>
+
+<% if @trips.any? %>
+	<ul>
+		<%= @trips.each do |trip| %>
+		<li>
+			<%= trip.info %>
+			<br />
+			<%= link_to 'Show Details of Trip', trip_path(trip) %>
+			<%= link_to 'Edit this Trip', edit_trip_path(trip) %>
+			<%= link_to 'Delete this Trip', trip_path(trip), data: {confirm: 'Do you really want to delete?'}, method: :delete %>
+		</li>
+
+		<% end %>
+	</ul>
+<% else %>
+	<h3>Bummer dude, your itinerary is vacant. Plan an adventure!</h3>
+	<%= link_to 'Plan an Adventure!', new_trip_path, class: 'btn btn-primary' %>
+<% end %>

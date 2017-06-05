@@ -1,8 +1,8 @@
 class TripsController < ApplicationController
-	before_action set_trip, only: {:show, :edit, :update, :destroy}
+	before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def index
-		@trip = current_user.trips
+		@trips = current_user.trips
   end
 
   def show
@@ -10,6 +10,7 @@ class TripsController < ApplicationController
 
 	def new
 		@trip = current_user.trips.new
+		render(partial: 'form', locals: {title: 'Create a New Trip!'})
 	end
 
 	def create
@@ -22,7 +23,7 @@ class TripsController < ApplicationController
 	end
 
 	def edit
-		render(partial: 'form', locals: {title: 'Create a new trip!'} )
+		render(partial: 'form', locals: {title: 'Create a new trip!'})
 	end
 
 	def update
@@ -48,7 +49,7 @@ class TripsController < ApplicationController
 		end
 
 		def set_trip
-			@trip = current_user.trip(params[:id])
+			@trip = current_user.trips.find(params[:id])
 		end
 
 end
