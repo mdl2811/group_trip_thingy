@@ -39,13 +39,17 @@ class TripsController < ApplicationController
 		redirect_to index
 	end
 
-	def add_location
-
+	def add_destination
+		@trip.update(dest_params)
 	end
 
 	private
 		def trip_params
 			params.require(:trip).permit(:name)
+		end
+
+		def dest_params
+			params.require(:location).permit(:destinations)
 		end
 
 		def set_trip
