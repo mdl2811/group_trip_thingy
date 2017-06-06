@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170605163936) do
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_addresses_on_location_id"
+    t.index ["location_id"], name: "index_addresses_on_location_id", using: :btree
   end
 
   create_table "locations", force: :cascade do |t|

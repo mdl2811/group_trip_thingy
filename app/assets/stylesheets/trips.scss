@@ -3,6 +3,68 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.list_styles {
-	margin: 10px 0;
+
+.top-photo {
+	height: 1000px;
+    background: linear-gradient(
+	      rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),  url("http://www.technocrazed.com/wp-content/uploads/2015/12/Landscape-wallpaper-16.jpg") top center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.second-photo {
+	height: 1000px;
+    background: linear-gradient(
+	      rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),  url("https://i.ytimg.com/vi/zAjrAtg_XoA/maxresdefault.jpg") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.third-photo {
+	height: 1000px;
+    background: linear-gradient(
+	      rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),  url("http://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-18.jpg") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+
+.top-photo h1 {
+	font-size: 92px;
+}
+
+.second-photo h1 {
+	font-size: 92px;
+}
+
+.third-photo h1 {
+	font-size: 92px;
+}
+
+.list-styles {
+	margin: 10px 2px;
+	list-style: none;
+	text-align: center;
+	border: 1px solid black;
+	height: 150px;
+	border-radius: 20px;
+}
+
+.list-styles:hover {
+	border: none;
+	background-color: #404040;
+	color: white;
 }

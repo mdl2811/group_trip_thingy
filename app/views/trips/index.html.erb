@@ -1,10 +1,9 @@
 
-<h1>Roads? Where we're going we don't need roads.</h1>
-<br />
+
 
 <h3><%= current_user.email %></h3>
 <br />
-<h3>Your password is: <%= current_user.encrypted_password %></h3>
+<h3>Secrets Out!<br/>Your password is: <%= current_user.encrypted_password %></h3>
 <br />
 <h3>Your Trips:</h3>
 
@@ -12,8 +11,9 @@
 <% if @trips.any? %>
 	<ul>
 		<% @trips.each do |trip| %>
-		<li class='list-styles'>
-			<%= trip.info %>
+		<li class='list-styles col-md-4'>
+			<h2> <%= trip.info %> </h2>
+			<br />
 			<%= link_to 'Details', trip_path(trip), class: 'btn btn-primary'%>
 			<%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-warning' %>
 			<%= link_to 'Delete', trip_path(trip),
