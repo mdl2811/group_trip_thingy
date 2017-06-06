@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-	root 'locations#index'
-	
-  	devise_for :users
+	root 'trips#index'
+
+  devise_for :users
 
 	resources :trips
 
 	resources :locations do
-	resources :addresses
+		resources :addresses
 	end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
