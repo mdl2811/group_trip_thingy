@@ -7,6 +7,15 @@
 
 }
 
+.background-photo {
+	height: 90	0px;
+	background: linear-gradient(
+	      rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),  url("https://wallpaperscraft.com/image/istanbul_city_sultanahmet_mosque_turkey_25408_1920x1080.jpg") bottom center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: black;
+}
+
 .top-padding {
 	padding-top: 55px;
 }
@@ -20,6 +29,10 @@
     justify-content: center;
     align-items: center;
     color: black;
+}
+
+.glyphicon-tree-conifer {
+	font-size: 74px;
 }
 
 .second-photo {
@@ -41,6 +54,7 @@
     background-size: cover;
     background-attachment: fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
@@ -98,8 +112,12 @@
 	margin: 0 auto;
 	width: 90%;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+}
+
+.random-padding {
+	padding-bottom: 100px;
 }
 
 #new_trip {
@@ -113,6 +131,13 @@
     align-items: center;
 }
 
+a {
+	color: white;
+}
+
+a:hover {
+	color: green;
+}
 
 
 

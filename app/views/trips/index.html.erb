@@ -1,47 +1,43 @@
+<div class="background-photo">
+	<div class="container">
+		<h3>Welcome, <%= current_user.email %></h3>
+		<br />
+		<h3>Secrets Out!<br/>Your password is: <%= current_user.encrypted_password %></h3>
+		<br />
+		<h3>Your Trips:</h3>
 
-	<div class="top-photo">
-      <h1>Introducing</h1>
-    </div>
-    <div class="second-photo">
-      <h1>The Most Basic Trip Tracker</h1>
-    </div>
-    <div class="third-photo">
-      <h1>Ever.</h1>
-    </div>
-
-<div class="container">
-	<h3><%= current_user.email %></h3>
-	<br />
-	<h3>Secrets Out!<br/>Your password is: <%= current_user.encrypted_password %></h3>
-	<br />
-	<h3>Your Trips:</h3>
-
-	<div class='container complete'>
-	<% if @trips.any? %>
-		<ul>
-			<% @trips.each do |trip| %>
-			<li class='list-styles col-md-3 col-lg-4 col-sm-12'>
-				<h2> <%= trip.info %> </h2>
-				<br />
-				<%= link_to 'Details', trip_path(trip), class: 'btn btn-primary'%>
-				<%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-warning' %>
-				<%= link_to 'Delete', trip_path(trip),
-										 class: 'btn btn-danger',
-										 data: {confirm: 'Do you really want to delete?'},
-										 method: :delete %>
-			</li>
-			<% end %>
-		</ul>
+		<div class='container complete'>
+		<% if @trips.any? %>
+			<ul>
+				<% @trips.each do |trip| %>
+				<li class='list-styles col-md-3 col-lg-4 col-sm-12'>
+					<h2> <%= trip.info %> </h2>
+					<br />
+					<%= link_to 'Details', trip_path(trip), class: 'btn btn-primary'%>
+					<%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-warning' %>
+					<%= link_to 'Delete', trip_path(trip),
+											 class: 'btn btn-danger',
+											 data: {confirm: 'Do you really want to delete?'},
+											 method: :delete %>
+				</li>
+				<% end %>
+			</ul>
 
 
-		<% else %>
+			<% else %>
 
-		<h2></h2>
-	<% end %>
+			<h2></h2>
+		<% end %>
+		</div>
+		<div class="random-padding"></div>
+		
+		<a class='plan btn btn-primary' href="/trips/new">
+			<span class="glyphicon glyphicon-leaf"></span>
+			&nbsp;&nbsp;Plan an Adventure!&nbsp;&nbsp;
+			<span class="glyphicon glyphicon-tent"></span>
+		</a>
+		
+		<br />
+		<br />
 	</div>
-	<br />
-	<br />
-	<%= link_to 'Plan an Adventure!', new_trip_path, class: 'plan btn btn-primary' %>
-	<br />
-	<br />
 </div>

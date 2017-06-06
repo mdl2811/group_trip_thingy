@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-	root 'trips#index'
+	root 'locations#index'
 	
   	devise_for :users
 
