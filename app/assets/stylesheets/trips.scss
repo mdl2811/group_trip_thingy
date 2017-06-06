@@ -2,8 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.container {
+	padding: 0;
 
+}
 
+.top-padding {
+	padding-top: 55px;
+}
 .top-photo {
 	height: 1000px;
     background: linear-gradient(
@@ -40,14 +46,20 @@
     color: white;
 }
 
+.complete {
+	height: 200px;
+	text-align: center;
 
+}
 
 .top-photo h1 {
 	font-size: 92px;
+	text-align: center;
 }
 
 .second-photo h1 {
 	font-size: 92px;
+	text-align: center;
 }
 
 .third-photo h1 {
@@ -55,16 +67,73 @@
 }
 
 .list-styles {
-	margin: 10px 2px;
 	list-style: none;
 	text-align: center;
-	border: 1px solid black;
 	height: 150px;
 	border-radius: 20px;
+	background-color: #ccc44c;
+}
+
+.list-styles:nth-child(even){
+	background-color: #aaa1aa;
+}
+
+.list-styles:nth-child(even):hover{
+	background-color: #ccc44c;
 }
 
 .list-styles:hover {
 	border: none;
-	background-color: #404040;
 	color: white;
+	background-color: #aaa1aa;
 }
+
+.trip-show {
+	padding: 30px;
+}
+
+.plan {
+	height: 100px;
+	font-size: 50px;
+	margin: 0 auto;
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#new_trip {
+	height: 800px;
+    background: linear-gradient(
+	      rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),  url("http://wallpapersdsc.net/wp-content/uploads/2016/09/Zion-National-Park-Wallpaper.jpg") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

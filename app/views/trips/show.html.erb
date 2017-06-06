@@ -1,9 +1,11 @@
+<div class="trip-show">
+
 <p>
 	<strong>Name:</strong>
-	<%= @trip.name %>
 </p>
 
 			<%= @trip.info %>
+			<h1></h1>
 			<%= link_to 'Trip Locations', new_location_path, class: 'btn btn-success' %>
 			<%= link_to 'Edit', edit_trip_path(@trip), class: 'btn btn-warning' %>
 			<%= link_to 'Delete', trip_path(@trip),
@@ -11,6 +13,7 @@
 									 data: {confirm: 'Do you really want to delete?'},
 									 method: :delete %>
 
+</div>
 
 
 

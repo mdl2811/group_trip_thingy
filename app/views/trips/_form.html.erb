@@ -1,12 +1,12 @@
-<%= title %>
 
-<%= form_for @trip, html: {class: 'form_horizontal'} do |f| %>
-  <div class="form-group">
-		<%= f.label :name, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-			<%= f.text_field :name, class: 'form-control' %>
-    </div>
-  </div>
-	<%= f.submit nil, class: 'btn-primary' %>
-</form>
-<% end %>
+
+	<%= form_for @trip, :html => {class: 'form-background'} do |f| %>
+		<div class="form-group">
+			<%= f.label :name, 'Name Your Trip', class: 'col-sm-2 control-label' %>
+				<div class="col-sm-10">
+					<%= f.text_field :name, class: 'form-control' %>
+				</div>
+		</div>
+			<%= f.submit nil, class: 'btn-primary' %>
+	<% end %>
+
