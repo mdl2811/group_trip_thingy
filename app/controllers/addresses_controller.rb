@@ -41,7 +41,7 @@ class AddressesController < ApplicationController
 
 	private
 	  def set_address
-	    @address = @location.addresses.find(params[:id])
+			@address = @location.addresses.find(params[:id])
 	  end
 
 	  def set_location

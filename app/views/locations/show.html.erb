@@ -5,26 +5,15 @@
 
 <p>
   <strong>State:</strong>
-  <%= @artist.genre %>
+  <%= @location.state %>
 </p>
 
 <p>
-  <strong>Age:</strong>
-  <%= @artist.age %>
+  <strong>City:</strong>
+  <%= @location.city %>
 </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @artist.active %>
-</p>
-
-
-<p>
-  <strong>Song count:</strong>
-  <%= @artist.songs.count %>
-</p>
-
-<%= link_to 'All Songs', artist_songs_path(@artist) %> |
-<%= link_to 'New Song', new_artist_song_path(@artist) %> |
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<%= link_to 'All locations', location_address_path(@artist) %> |
+<%= link_to 'New location', new_location_address_path(@artist) %> |
+<%= link_to 'Edit', edit_location_path(@artist) %> |
+<%= link_to 'Back', locations_path %>
