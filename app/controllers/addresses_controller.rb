@@ -49,6 +49,6 @@ class AddressesController < ApplicationController
 	  end
 
 	  def address_params
-	    params.require(:address).permit(:phone_number, :latitude, :longitude, :belong_to)
+	    params.require(:address).permit(:phone_number, :latitude, :longitude, :location_id)
 	  end
 end

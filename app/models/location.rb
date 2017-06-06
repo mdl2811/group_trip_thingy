@@ -1,5 +1,5 @@
 class Location < ApplicationRecord
-	has_one :address, dependent: :destroy
+	has_many :addresses, dependent: :destroy
 
 	validates_presence_of :country, :state, :city, :attraction
 end
