@@ -73,7 +73,7 @@
 #                          PATCH  /locations/:id(.:format)                             locations#update
 #                          PUT    /locations/:id(.:format)                             locations#update
 #                          DELETE /locations/:id(.:format)                             locations#destroy
-# 
+#
 
 Rails.application.routes.draw do
 

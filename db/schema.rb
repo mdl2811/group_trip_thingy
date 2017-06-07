@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20170607211004) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "phone_number"
-    t.float "latitude", null: false
-    t.float "longitude", null: false
+    t.string "latitude", null: false
+    t.string "longitude", null: false
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
