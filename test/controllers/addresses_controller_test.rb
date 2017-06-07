@@ -1,14 +1,7 @@
 require 'test_helper'
 
 class AddressesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get addresses_index_url
-    assert_response :success
-  end
-
-  test "should get show" do
-    get addresses_show_url
-    assert_response :success
-  end
-
+  # test "the truth" do
+  #   assert true
+  # end
 end

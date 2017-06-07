@@ -53,7 +53,7 @@ class TripsController < ApplicationController
 		end
 
 		def set_trip
-			@trip = current_user.trips.find(params[:id])
+			@trip = Trip.find(params[:id])
 		end
 
 end

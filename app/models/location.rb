@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  country    :string           not null
+#  state      :string           not null
 #  city       :string           not null
 #  attraction :string           not null
 #  trip_id    :integer
@@ -12,7 +13,9 @@
 #
 
 class Location < ApplicationRecord
-	has_many :addresses, dependent: :destroy
-
 	validates_presence_of :country, :state, :city, :attraction
+	has_many :addresses, dependent: :destroy
+	belongs_to :trip
+
+
 end

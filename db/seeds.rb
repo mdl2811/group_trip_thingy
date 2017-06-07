@@ -5,15 +5,15 @@
                             state: Faker::Address.state,
                             attraction: Faker::Pokemon.name
   )
-  end
 
-  50.times do
-    address = Address.create(latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude,
+  1.times do
+    address = Address.create(street_name: Faker::Address.street_name,
     location_id: @num
     )
     @num += 1
     puts "#{address.location_id}"
   end
-  
+end
+
+
   puts "Get your trips here!"

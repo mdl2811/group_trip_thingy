@@ -26,4 +26,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :trips
+
+  accepts_nested_attributes_for :trips, reject_if: :all_blank
 end

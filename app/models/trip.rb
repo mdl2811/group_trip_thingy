@@ -11,10 +11,11 @@
 #
 
 class Trip < ApplicationRecord
+  validates_presence_of :name
   belongs_to :user, optional: true
 	has_many :locations
 
-	validates_presence_of :name
+  accepts_nested_attributes_for :locations, reject_if: :all_blank
 
 	def info
 		"#{name}"

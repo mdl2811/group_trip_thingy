@@ -11,6 +11,7 @@ class LocationsController < ApplicationController
 
   def new
   	@location = @trip.locations.new
+		@location.address = Address.new
   end
 
   def create
@@ -28,9 +29,9 @@ class LocationsController < ApplicationController
   def update
   	if @location.update(location_params)
 		redirect_to @location
-	else
-		render :edit
-	end
+		else
+			render :edit
+		end
   end
 
   def destroy
@@ -44,10 +45,12 @@ class LocationsController < ApplicationController
 		end
 
 	  def set_location
-			@location = @trip.locaions.find(params[:id])
+			@location = @trip.locations.find(params[:id])
 	  end
 
 	  def location_params
-	  	params.require(:location).permit(:country, :state, :city, :attraction, :trip_id)
+	  	params.require(:location).permit(:country, :state, :city, :attraction, :trip_id,
+																				address_attributes: [:street_name]
+			)
 	  end
 end

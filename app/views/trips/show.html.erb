@@ -1,17 +1,31 @@
 <div class="container trip-show">
 
 	<strong>Name:</strong>
-			<%= @trip.info %>
-			<%= link_to 'Trip Locations',
-									 trip_locations_path(@trip),
-									 class: 'btn btn-success' %>
+	<%= @trip.info %>
 
-			<%= link_to 'Edit', edit_trip_path(@trip),
-									 class: 'btn btn-warning' %>
-			<%= link_to 'Delete', trip_path(@trip),
-									 class: 'btn btn-danger',
-									 data: {confirm: 'Do you really want to delete?'},
-									 method: :delete %>
+	<% if @trip.locations.any? %>
+
+	<% @trip.locations.each do |l| %>
+
+	<%= link_to "Trip's locations",
+	locations_path(@trip),
+	class: 'btn btn-success' %>
+
+	<%= link_to 'Delete', trip_path(@trip),
+	class: 'btn btn-danger',
+		data: {confirm: 'Do you really want to delete?'},
+		method: :delete %>
+
+	<% end %>
+
+	 <% else %>
+
+	 		<h3>There are no locations! ADD MORE LOCATIONS<h3>
+
+				<% end %>
+
+
+
 
 
 
