@@ -20,10 +20,18 @@ gem 'devise'
 
 gem 'geocoder'
 
+gem 'omniauth-facebook'
+
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'annotate'
+  gem 'faker'
+  gem 'dotenv-rails'
 end
 
 group :development do
