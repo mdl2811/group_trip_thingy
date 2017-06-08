@@ -20,6 +20,8 @@ gem 'geocoder'
 
 gem 'omniauth-facebook'
 
+gem 'omniauth-github'
+
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
