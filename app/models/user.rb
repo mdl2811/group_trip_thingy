@@ -31,9 +31,11 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :trips, reject_if: :all_blank
 
   def self.from_omniauth(auth)
-  	where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-  		user.email = auth.info.email
-  		user.password = Devise.friendly_token[0,20]
+
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      binding.pry
+      user.email = auth.info.email ? auth.info.email : "#{auth.info.name.split(' ').join('.')}@facebook.com"
+      user.password = Devise.friendly_token[0,20]
   	end
   end
 end
