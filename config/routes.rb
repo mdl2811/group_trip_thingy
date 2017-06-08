@@ -47,7 +47,9 @@ Rails.application.routes.draw do
 
 	root 'trips#index'
 
-  devise_for :users
+  devise_for :users, controllers: {
+  	omniauth_callbacks: 'omniauth_callbacks'
+  }
 
 	resources :trips
 	resources :locations

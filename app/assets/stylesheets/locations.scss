@@ -125,11 +125,11 @@
     align-items: center;
 }
 
-a {
+a > .glyphicon {
 	color: white;
 }
 
-a:hover {
+a > .glyphicon:hover {
 	color: green;
 }
 
