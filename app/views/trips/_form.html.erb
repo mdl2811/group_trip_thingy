@@ -1,12 +1,48 @@
 
 
-	<%= form_for @trip, :html => {class: 'form-background'} do |f| %>
+	<%= form_for trip do |f| %>
+	<% if trip.errors.any? %>
+    <h2>
+      <%= pluralize(trip.errors.count, 'error') %>
+      prohibited this user from being saved
+    </h2>
+    <ul>
+      <% trip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  	<% end %>
 		<div class="form-group">
+			<h3>Trip</h3>
 			<%= f.label :name, 'Name Your Trip', class: 'col-sm-2 control-label' %>
 				<div class="col-sm-10">
 					<%= f.text_field :name, class: 'form-control' %>
 				</div>
 		</div>
-			<%= f.submit nil, class: 'btn-primary' %>
-	<% end %>
 
+		<h3>Trip Locations:</h3>
+	  <%= f.fields_for :location do |l| %>
+	    <%= l.label :country %>
+	    <%= l.text_field :country %>
+
+	    <%= l.label :city %>
+	    <%= l.text_field :city %>
+
+	    <%= l.label :state %>
+	    <%= l.text_field :state %>
+
+	    <%= l.label :attraction %>
+	    <%= l.text_field :attraction %>
+
+	  <% end %>
+
+		<h3>Location Addresses:</h3>
+	  <%= l.fields_for :address do |a| %>
+	    <%= a.label :street_name %>
+	    <%= a.text_field :street_name %>
+
+	  <% end %>
+
+
+			<%= f.submit nil, class: 'btn-primary' %>
+<% end %>

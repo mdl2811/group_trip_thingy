@@ -3,30 +3,21 @@
 	<strong>Name:</strong>
 	<%= @trip.info %>
 
-	<% if @trip.locations.any? %>
 
-	<% @trip.locations.each do |l| %>
-
-	<%= link_to "Trip's locations",
-	locations_path(@trip),
-	class: 'btn btn-success' %>
-
-	<%= link_to 'Delete', trip_path(@trip),
-	class: 'btn btn-danger',
-		data: {confirm: 'Do you really want to delete?'},
-		method: :delete %>
-
-	<% end %>
-
-	 <% else %>
-
-	 		<h3>There are no locations! ADD MORE LOCATIONS<h3>
-
-				<% end %>
+		<div class='card-content'>
+		 <%= @trip.locations.us_formatted %>
 
 
 
 
 
+				<%= link_to 'Delete', trip_path(@trip),
+				class: 'btn btn-danger',
+					data: {confirm: 'Do you really want to delete?'},
+					method: :delete %>
 
+
+
+
+				</div>
 </div>

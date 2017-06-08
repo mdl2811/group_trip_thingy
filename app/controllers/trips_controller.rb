@@ -9,14 +9,15 @@ class TripsController < ApplicationController
 	end
 
 	def new
-		@trip = current_user.trips.new
-		render(partial: 'form', locals: {title: 'Create a New Trip!'})
+		@trip = Trip.new
+		@location = @trip.locations.build
+		@location.address= Address.new
 	end
 
 	def create
 		@trip = current_user.trips.new(trip_params)
 		if @trip.save
-			redirect_to trip_path(@trip)
+			redirect_to @trip
 		else
 			render :new
 		end
@@ -44,16 +45,20 @@ class TripsController < ApplicationController
 	end
 
 	private
+
+	def set_trip
+		@trip = Trip.find(params[:id])
+	end
+
 		def trip_params
-			params.require(:trip).permit(:name)
+			params.require(:trip).permit(
+			:name, location_attributes: [:country, :city, :state, :attraction, :trip_id]
+			)
 		end
 
 		def dest_params
 			params.require(:location).permit(:destinations)
 		end
 
-		def set_trip
-			@trip = Trip.find(params[:id])
-		end
 
 end

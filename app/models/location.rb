@@ -14,8 +14,14 @@
 
 class Location < ApplicationRecord
 	validates_presence_of :country, :state, :city, :attraction
-	has_many :addresses, dependent: :destroy
-	belongs_to :trip
+	has_one :address, dependent: :destroy
+	belongs_to :trip, optional: true
+
+	accepts_nested_attributes_for :address, reject_if: :all_blank
+
+	def us_formatted
+		"#{country}, #{state}, #{city}, #{attraction}"
+	end
 
 
 end
