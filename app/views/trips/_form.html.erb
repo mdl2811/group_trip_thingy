@@ -20,29 +20,6 @@
 				</div>
 		</div>
 
-		<h3>Trip Locations:</h3>
-	  <%= f.fields_for :location do |l| %>
-	    <%= l.label :country %>
-	    <%= l.text_field :country %>
-
-	    <%= l.label :city %>
-	    <%= l.text_field :city %>
-
-	    <%= l.label :state %>
-	    <%= l.text_field :state %>
-
-	    <%= l.label :attraction %>
-	    <%= l.text_field :attraction %>
-
-	  <% end %>
-
-		<h3>Location Addresses:</h3>
-	  <%= l.fields_for :address do |a| %>
-	    <%= a.label :street_name %>
-	    <%= a.text_field :street_name %>
-
-	  <% end %>
-
 
 			<%= f.submit nil, class: 'btn-primary' %>
 <% end %>

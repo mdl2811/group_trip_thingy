@@ -3,7 +3,10 @@
 # Table name: addresses
 #
 #  id          :integer          not null, primary key
-#  street_name :string
+#  state       :string
+#  city        :string
+#  street      :string
+#  zip         :string
 #  location_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -12,9 +15,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  street_name: MyString
-  location: one
+  state: MyString
+  street: MyString
+  zip: 1
 
 two:
-  street_name: MyString
-  location: two
+  state: MyString
+  street: MyString
+  zip: 1

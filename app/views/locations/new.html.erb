@@ -1,0 +1,44 @@
+<h1>Add Location</h1>
+
+<h3>Address:</h3>
+<%= form_for @location do |l| %>
+
+  <% if @location.errors.any? %>
+    <h2>
+      <%= pluralize(@location.errors.count, 'error') %>
+      prohibited this user from being saved
+    </h2>
+    <ul>
+      <% @location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
+  <%= l.label :country %>
+  <%= l.text_field :country %>
+
+  <%= l.label :attraction %>
+  <%= l.text_field :attraction %>
+
+  <div>
+    <%= l.fields_for :address do |a| %>
+
+    <%= a.label :city %>
+    <%= a.text_field :city %>
+  </div>
+
+    <%= a.label :state %>
+    <%= a.text_field :state %>
+    <div>
+
+    <%= a.label :street %>
+    <%= a.text_field :street %>
+
+    <%= a.label :zip %>
+    <%= a.text_field :zip %>
+
+    <% end %>
+  </div>
+  <%= l.submit nil, class: 'btn' %>
+<% end %>

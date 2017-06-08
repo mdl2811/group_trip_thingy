@@ -3,7 +3,10 @@
 # Table name: addresses
 #
 #  id          :integer          not null, primary key
-#  street_name :string
+#  state       :string
+#  city        :string
+#  street      :string
+#  zip         :string
 #  location_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

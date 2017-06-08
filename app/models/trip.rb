@@ -15,8 +15,6 @@ class Trip < ApplicationRecord
   belongs_to :user, optional: true
 	has_many :locations
 
-  accepts_nested_attributes_for :locations, reject_if: :all_blank
-
 	def info
 		"#{name}"
 	end

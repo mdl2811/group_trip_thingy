@@ -1,23 +1,28 @@
-<div class="container trip-show">
 
-	<strong>Name:</strong>
-	<%= @trip.info %>
+<p>Name: <%= @trip.info %></p>
 
 
-		<div class='card-content'>
-		 <%= @trip.locations.us_formatted %>
+<% if @trip.locations.any? %>
+	<% @trip.locations.each do |location| %>
+	<h5>Address</h5>
+	<ul>
+		<li><%= location.us_formatted %></li>
+		<li><%= location.address.city %></li>
+		<li><%= location.address.zip %></li>
+		<li><%= location.address.state %></li>
+		<li><%= location.address.street %></li>
+		<%= link_to 'Delete Location', trip_location_path(@trip, location), method: :delete %>
+	</ul>
 
+	<% end %>
+<% else %>
+	<p>No Location</p>
 
-
-
-
-				<%= link_to 'Delete', trip_path(@trip),
-				class: 'btn btn-danger',
-					data: {confirm: 'Do you really want to delete?'},
-					method: :delete %>
-
-
-
-
-				</div>
+<% end %>
+<div>
+<%= link_to 'Add Location', new_trip_location_path(@trip) %>
+<%= link_to 'Delete Trip', trip_path(@trip), class: 'btn btn-danger',
+data: {confirm: 'Do you really want to delete?'},
+method: :delete
+%>
 </div>

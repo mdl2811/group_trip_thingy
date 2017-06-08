@@ -4,8 +4,6 @@
 #
 #  id         :integer          not null, primary key
 #  country    :string           not null
-#  state      :string           not null
-#  city       :string           not null
 #  attraction :string           not null
 #  trip_id    :integer
 #  created_at :datetime         not null

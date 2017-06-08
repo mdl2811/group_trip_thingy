@@ -10,8 +10,6 @@ class TripsController < ApplicationController
 
 	def new
 		@trip = Trip.new
-		@location = @trip.locations.build
-		@location.address= Address.new
 	end
 
 	def create
@@ -52,12 +50,8 @@ class TripsController < ApplicationController
 
 		def trip_params
 			params.require(:trip).permit(
-			:name, location_attributes: [:country, :city, :state, :attraction, :trip_id]
+			:name
 			)
-		end
-
-		def dest_params
-			params.require(:location).permit(:destinations)
 		end
 
 

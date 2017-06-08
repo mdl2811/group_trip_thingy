@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607221245) do
+ActiveRecord::Schema.define(version: 20170608171555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.string "street_name"
+    t.string "state"
+    t.string "city"
+    t.string "street"
+    t.string "zip"
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,8 +28,6 @@ ActiveRecord::Schema.define(version: 20170607221245) do
 
   create_table "locations", force: :cascade do |t|
     t.string "country", null: false
-    t.string "state", null: false
-    t.string "city", null: false
     t.string "attraction", null: false
     t.bigint "trip_id"
     t.datetime "created_at", null: false
@@ -64,7 +65,6 @@ ActiveRecord::Schema.define(version: 20170607221245) do
     t.index ["uid"], name: "index_users_on_uid"
   end
 
-  add_foreign_key "addresses", "locations"
   add_foreign_key "locations", "trips"
   add_foreign_key "trips", "users"
 end
