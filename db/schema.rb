@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 20170608171555) do
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.string "state"
-    t.string "city"
-    t.string "street"
-    t.string "zip"
+    t.string "state", null: false
+    t.string "city", null: false
+    t.string "street", null: false
+    t.string "zip", null: false
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

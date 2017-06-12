@@ -32,42 +32,10 @@ class User < ApplicationRecord
 
   def self.from_omniauth(auth)
 
+    binding.pry
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      binding.pry
       user.email = auth.info.email ? auth.info.email : "#{auth.info.name.split(' ').join('.')}@facebook.com"
       user.password = Devise.friendly_token[0,20]
   	end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
